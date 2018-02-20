@@ -54,6 +54,16 @@ var budgetController = (function () {
 
     },
 
+    calculateBudget: function() {
+
+      // 1. Calculate total income and expenses
+
+      // 2. Calculate budget (income - expenses)
+
+      // 3. Calculate percentage of income that we spent
+
+    },
+
     // Public function to test data structure
     testing: function() {
       console.log(data);
@@ -87,7 +97,7 @@ var UIController = (function () {
       return {
         type: document.querySelector(DOMStrings.inputType).value, // Will be either "inc" or "exp"
         description: document.querySelector(DOMStrings.inputDescription).value,
-        value: parseFloat(document.querySelector(DOMStrings.inputValue).value)
+        value: parseFloat(document.querySelector(DOMStrings.inputValue).value) //String parsed into float
       }
     },
 
