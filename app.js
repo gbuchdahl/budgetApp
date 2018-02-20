@@ -115,6 +115,21 @@ var UIController = (function () {
 
     },
 
+    // Clear the UI
+    clearFields: function() {
+      var fields, fieldsArray;
+
+      fields = document.querySelectorAll(DOMStrings.inputDescription + ', ' + DOMStrings.inputValue);
+
+      fieldsArray = Array.prototype.slice.call(fields);
+
+      fieldsArray.forEach(function(current, index, array) {
+        current.value = "";
+      });
+
+      fieldsArray[0].focus();
+    },
+
     // Allows other classes to use the DOM Strings object
     getDOMStrings: function(){
       return DOMStrings;
@@ -154,6 +169,9 @@ var controller = (function (budgetCtrl, UICtrl) {
 
     // 3. Add a new item to the UI
     UICtrl.addListItem(newItem, input.type);
+
+    // 3.5. Clear fields
+    UICtrl.clearFields();
 
     // 4. Calculate the budget
     // 5. display the budget
