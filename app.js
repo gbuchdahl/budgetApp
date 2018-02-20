@@ -115,7 +115,11 @@ var UIController = (function () {
     inputValue: '.add__value',
     inputBtn: '.add__btn',
     incomeContainer: '.income__list',
-    expensesContainer: '.expenses__list'
+    expensesContainer: '.expenses__list',
+    budgetLabel: '.budget__value',
+    incomeLabel: '.budget__income--value',
+    expensesLabel: '.budget__expenses--value',
+    percentageLabel: '.budget__expenses--percentage'
   };
 
 
@@ -167,6 +171,12 @@ var UIController = (function () {
 
       fieldsArray[0].focus();
     },
+
+    displayBudget: function (obj) {
+
+
+
+    }
 
     // Allows other classes to use the DOM Strings object
     getDOMStrings: function(){
