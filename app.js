@@ -89,6 +89,22 @@ var UIController = (function () {
       }
     },
 
+    addListItem = function(obj, type){
+
+      var html;
+      // Create HTML String with Placeholder text
+      if (type === 'inc'){
+        html = ' <div class="item clearfix" id="income-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+      } else {
+        '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+      }
+      // Replace placeholder text with actual Data
+
+      // Insert HTML into the DOM
+
+
+
+    },
 
     // Allows other classes to use the DOM Strings object
     getDOMStrings: function(){
