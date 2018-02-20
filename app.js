@@ -158,6 +158,11 @@ var controller = (function (budgetCtrl, UICtrl) {
     });
   }
 
+  var updateBudget = function() {
+    // 4. Calculate the budget
+    // 5. display the budget
+  };
+
   var ctrlAddItem = function(){
     var input, newItem;
 
@@ -170,11 +175,10 @@ var controller = (function (budgetCtrl, UICtrl) {
     // 3. Add a new item to the UI
     UICtrl.addListItem(newItem, input.type);
 
-    // 3.5. Clear fields
+    // 4. Clear fields
     UICtrl.clearFields();
 
-    // 4. Calculate the budget
-    // 5. display the budget
+
   };
 
   return {
