@@ -11,4 +11,4 @@
 - Modularization / Encapsulation of code
 
 
-NOTE: All code here is property of Jonas Schmedtmann's "The Complete JavaScript Course" which I purchased on Udemy. Reproduced on GitHub just to get practice with version control and to make it easier to figure out where my mistakes are.
+NOTE: All code here is property of Jonas Schmedtmann's "The Complete JavaScript Course," purchased on Udemy. Reproduced on GitHub just to get practice with version control and to make it easier to figure out where my mistakes are.
