@@ -80,6 +80,14 @@ var budgetController = (function () {
       data.percentage = Math.round((data.totals.exp / data.totals.inc) * 100);
     },
 
+    getBudget: function() {
+      return {
+        budget: data.budget,
+        totalInc: data.totals.inc,
+        totalExp: data.totals.exp,
+        percentage: data.percentage
+      };
+    },
     // Public function to test data structure
     testing: function() {
       console.log(data);
@@ -186,7 +194,11 @@ var controller = (function (budgetCtrl, UICtrl) {
 
   var updateBudget = function() {
     // 1. Calculate the budget
+    budgetCtrl.calculateBudget();
+
     // 2. Return the budget
+    var budget = budgetCtrl.getBudget();
+
     // 3. display the budget
   };
 
