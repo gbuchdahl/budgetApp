@@ -2,6 +2,8 @@
 //BUDGET CONTROLLER
 var budgetController = (function () {
 
+
+  //Function constructors for Expense and Income objects
   var Expense = function(id, description, value){
     this.id = id;
     this.description = description;
@@ -14,7 +16,7 @@ var budgetController = (function () {
     this.value = value;
   };
 
-
+  // Massive Data Strucutre for everything to be added to page
   var data = {
     allItems: {
       exp: [],
@@ -28,6 +30,7 @@ var budgetController = (function () {
 
 
   return {
+    // public function to add an income / expense to data structure
     addItem: function(type, desc, val) {
       var newItem, ID;
 
@@ -51,6 +54,7 @@ var budgetController = (function () {
 
     },
 
+    // Public function to test data structure
     testing: function() {
       console.log(data);
     }
@@ -65,7 +69,8 @@ var budgetController = (function () {
 //UI CONTROLLER
 var UIController = (function () {
 
-
+  // Holds all the different strings that refer to HTML classes
+  // Which would make it easier to change things in the future
   var DOMStrings = {
     inputType: '.add__type',
     inputDescription: '.add__description',
@@ -75,6 +80,7 @@ var UIController = (function () {
 
 
   return {
+    // Gets input from the HTML form
     getInput: function(){
       return {
         type: document.querySelector(DOMStrings.inputType).value, // Will be either "inc" or "exp"
@@ -83,6 +89,8 @@ var UIController = (function () {
       }
     },
 
+
+    // Allows other classes to use the DOM Strings object
     getDOMStrings: function(){
       return DOMStrings;
     }
@@ -96,14 +104,13 @@ var UIController = (function () {
 //GLOBAL APP CONTROLLER
 var controller = (function (budgetCtrl, UICtrl) {
 
+  //Self explanatory function
   var setUpEventListeners = function() {
-
     var DOM = UICtrl.getDOMStrings();
 
     document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
-
     document.addEventListener('keypress', function(event) {
-
+        // If the pressed key was Enter
         if (event.keyCode === 13 || event.which === 13){
           ctrlAddItem();
         }
@@ -112,7 +119,6 @@ var controller = (function (budgetCtrl, UICtrl) {
   }
 
   var ctrlAddItem = function(){
-
     var input, newItem;
 
     // 1. Get input data
@@ -127,6 +133,7 @@ var controller = (function (budgetCtrl, UICtrl) {
   };
 
   return {
+    // Grand ol initialization function
     init: function() {
       console.log("Application has started.");
       setUpEventListeners();
