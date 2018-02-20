@@ -18,9 +18,11 @@ var budgetController = (function () {
 
   var calculateTotal = function(type){
     var sum = 0;
-    data.allItems[type].forEach(function(cur) {
-      sum += cur.value;
+    // Loop adds up the values of each element within the 'exp' or 'inc' array
+    data.allItems[type].forEach(function(current) {
+      sum += current.value;
     });
+    // which then gets stored into the data object
     data.totals[type] = sum;
   };
 
@@ -65,7 +67,9 @@ var budgetController = (function () {
     calculateBudget: function() {
 
       // 1. Calculate total income and expenses
-
+      calculateTotal('inc');
+      calculateTotal('exp');
+      
       // 2. Calculate budget (income - expenses)
 
       // 3. Calculate percentage of income that we spent
