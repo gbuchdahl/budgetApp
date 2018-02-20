@@ -69,4 +69,11 @@ var controller = (function (budgetCtrl, UICtrl) {
     // 5. display the budget
   };
 
+  return {
+    init: function() {
+      console.log("Application has started.");
+      setUpEventListeners();
+    }
+  };
+
 })(budgetController, UIController);
