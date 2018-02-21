@@ -188,6 +188,14 @@ var UIController = (function () {
 
     },
 
+    deleteListItem: function (selectorID) {
+
+      // Have to move up to parent and delete child to remove item from DOM
+      var element = document.getElementById(selectorID);
+      element.parentNode.removeChild(element);
+
+    },
+
     clearFields: function() {
       var fields, fieldsArray;
 
@@ -306,8 +314,10 @@ var controller = (function (budgetCtrl, UICtrl) {
       budgetCtrl.deleteItem(type, ID);
 
       // 2. Delete item from UI
-
+      UICtrl.deleteListItem(itemID);
       // 3. Update new Budget
+      updateBudget();
+      
     }
 
   }
