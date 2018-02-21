@@ -176,7 +176,8 @@ var UIController = (function () {
     expensesLabel: '.budget__expenses--value',
     percentageLabel: '.budget__expenses--percentage',
     container: '.container',
-    expensesPercLabel: '.item__percentage'
+    expensesPercLabel: '.item__percentage',
+    dateLabel: '.budget__title--month'
   };
 
   var capitalize = function(string) {
@@ -287,6 +288,18 @@ var UIController = (function () {
         }
       });
 
+    },
+
+    displayMonth: function(){
+      var now, months, year, month;
+      now = new Date();
+
+      months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+       'August', 'September', 'October', 'November', 'December'];
+
+      month = now.getMonth();
+      year = now.getFullYear();
+      document.querySelector(DOMStrings.dateLabel).textContent = months[month] + ' ' + year;
     },
 
     // Allows other classes to use the DOM Strings object
@@ -415,6 +428,7 @@ var controller = (function (budgetCtrl, UICtrl) {
         totalExp: 0,
         percentage: -1
       });
+      UICtrl.displayMonth();
     }
   };
 
