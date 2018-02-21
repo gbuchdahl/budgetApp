@@ -68,15 +68,15 @@ var budgetController = (function () {
     },
 
     deleteItem: function (type, id) {
-
       var ids, index;
 
+      // Returns an array with just the IDs of the items of that type
       ids = data.allItems[type].map(function(current){
         return current.id;
       });
 
+      // get the index of the id we want to delete, and then delete it
       index = ids.indexOf(id);
-
       if (index !== -1){
         data.allItems[type].splice(index, 1);
       }
