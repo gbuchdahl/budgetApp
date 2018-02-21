@@ -100,6 +100,12 @@ var budgetController = (function () {
       }
     },
 
+    calculatePercentages: function () {
+
+      
+
+    }
+
     getBudget: function() {
       return {
         budget: data.budget,
@@ -332,7 +338,7 @@ var controller = (function (budgetCtrl, UICtrl) {
       updateBudget();
       // 4. calculate and update Percentages
       updatePercentages();
-      
+
     }
 
   }
