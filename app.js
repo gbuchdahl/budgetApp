@@ -3,7 +3,7 @@
 var budgetController = (function () {
 
 
-  //Function constructors for Expense and Income objects
+  // Function constructors for Expense and Income objects
   var Expense = function(id, description, value){
     this.id = id;
     this.description = description;
