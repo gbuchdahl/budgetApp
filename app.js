@@ -180,8 +180,11 @@ var UIController = (function () {
       document.querySelector(DOMStrings.budgetLabel).textContent = obj.budget;
       document.querySelector(DOMStrings.incomeLabel).textContent = obj.totalInc;
       document.querySelector(DOMStrings.expensesLabel).textContent = obj.totalExp;
-      document.querySelector(DOMStrings.percentageLabel).textContent = obj.percentage;
-
+      if (obj.percentage !== -1){
+        document.querySelector(DOMStrings.percentageLabel).textContent = obj.percentage + '%';
+      } else {
+        document.querySelector(DOMStrings.percentageLabel).textContent = '---';
+      }
     },
 
     // Allows other classes to use the DOM Strings object
